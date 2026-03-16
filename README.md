@@ -352,54 +352,31 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
-### 12. MetaCall Local DX: Dashboard Redesign, Deploy CLI, and FaaS Stabilization
+### 12. MetaCall Local Dashboard Development
 
-**Skills**: TypeScript, React, Vite, Tailwind CSS, UI/UX Design, REST APIs, Node.js/Express, CLI Reliability, Backend Stabilization.
+**Skills**: TypeScript, React, Vite, Tailwind CSS, UI/UX Design
 
-**Expected size of the project**: Extended (350 hours)
+**Expected size of the project**: Medium (175 hours)
 
 **Difficulty rating**: Medium
 
 **Description**:
 
-The production MetaCall dashboard (`dashboard.metacall.io`) is closed-source. In local development, contributors can run the MetaCall FaaS server and CLI, but they do not have a complete open-source visual interface with production-grade UX. Current workflows still require manual CLI commands and raw endpoint usage to deploy apps, inspect deployments, invoke functions, and debug failures.
+This project aims to integrate the MetaCall dashboard with MetaCall FaaS. The dashboard will allow developers to monitor the local MetaCall FaaS server status, manage local deployments, test functions, and stream logs effectively, improving the overall local developer experience.
 
-This project proposes building a **faas local dashboard from scratch** with React, TypeScript, Vite, and Tailwind CSS, fully integrated with `@metacall/protocol`. The dashboard will cover all core local workflows: health visibility, deployment management, guided deployment creation, function testing, logs streaming, plan/payment UX surfaces, and runtime settings.
-
-The scope also includes essential **cross-repository reliability work** in `metacall/faas` and `metacall/deploy`, because a usable dashboard depends on stable backend and CLI behavior. This includes implementing the logs backend endpoint, hardening error handling and timeouts, addressing path and `.env` correctness, and fixing CLI termination/flag behavior.
-
-This proposal defines a fresh end-to-end GSoC implementation plan focused on building and stabilizing the local dashboard experience rather than patching a closed-source production UI.
+The project focuses on redesigning a local MetaCall dashboard from scratch using React, TypeScript, Vite, and Tailwind CSS. The dashboard will integrate seamlessly with the MetaCall Protocol to support core local workflows. It will provide developers with a centralized interface to view system health, manage deployments, test functions, and inspect logs, making local development with MetaCall more efficient and user-friendly.
 
 **Expected outcomes**:
 
- - **FaaS Dashboard Redesign**:
-   - Build and ship all key dashboard pages with complete route coverage:
-     - Dashboard Home (`/`)
-     - Deployments Hub (`/deployments`)
-     - Function Viewer + Deployment Detail (`/deployments/:id`)
-     - Deploy Hub (`/deployments/new`)
-     - Deploy Wizard (`/deployments/new/wizard`)
-     - Repository Deploy (`/deployments/new/repository`)
-     - Logs Viewer (`/deployments/:id/logs`)
-     - Settings + Billing Surface (`/settings`)
-     - Subscription Plan + Payment/Checkout UX (`/plans`, local mock payment flow)
-     - Auth pages (`/login`, `/signup`)
-     - Chat assistant route (`/chat`)
-   - Ensure plan-aware deployment UX, subscription visibility, and payment/checkout UI behavior for local FaaS mode.
-   - Keep redesign adaptable to MetaCall FaaS v2 changes and update UI/UX flows where needed.
- - **Backend & CLI Stabilization**:
-   - Harden `metacall/faas` with worker reliability guards, IPC timeout safety, secure path handling, atomic `.env` behavior, protocol type consistency, and critical backend test completion.
-   - Improve `metacall/deploy` with safer force behavior, provider-agnostic URL parsing, terminal-state-aware logs behavior, strict CI exit codes, and protocol contract alignment across FaaS/Deploy/Dashboard.
- - **Quality & Documentation**:
-   - Deliver stronger testing/CI confidence, updated setup and troubleshooting docs, architecture notes, screenshots, and validation checklist.
+ - A fully functional, MetaCall dashboard built with React and TypeScript.
+ - Implementation of key views including deployment management, function testing, and logs viewer, settings, plan, login/ signup.
+ - Seamless integration with the local MetaCall FaaS server and MetaCall Protocol.
+ - Clear documentation on how to set up and use the MetaCall dashboard.
 
 **Possible mentors**: Thomas Rory Gummerson, Jose Antonio Dominguez, Alexandre Gimenez Fernandez, Param Siddharth, Raj Aryan, Praveen Kumar.
 
-**Note**: The redesign will be updated according to MetaCall FaaS v2 changes, and UI/UX flows will be adjusted wherever needed to stay aligned with the latest backend behavior and developer workflow.
-
 **Resources**:
  - MetaCall FaaS Repository: https://github.com/metacall/faas
- - MetaCall Deploy Repository: https://github.com/metacall/deploy
  - MetaCall Protocol Repository: https://github.com/metacall/protocol
  - MetaCall FaaS Dashboard (Reference): https://dashboard.metacall.io
 
