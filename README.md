@@ -352,9 +352,9 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
-### 12. MetaCall Local Dashboard Development
+### 12. Redesign MetaCall Dashboard
 
-**Skills**: TypeScript, React, Vite, Tailwind CSS, UI/UX Design
+**Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
 
 **Expected size of the project**: Medium (175 hours)
 
@@ -362,7 +362,7 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 **Description**:
 
-This project aims to integrate the MetaCall dashboard with MetaCall FaaS. The dashboard will allow developers to monitor the local MetaCall FaaS server status, manage local deployments, test functions, and stream logs effectively, improving the overall local developer experience.
+This project aims to integrate the MetaCall dashboard with MetaCall FaaS. The dashboard will allow developers to deploy functions, the local MetaCall FaaS server status, manage local deployments, test functions, and view logs effectively, improving the overall local developer experience.
 
 The project focuses on redesigning a local MetaCall dashboard from scratch using React, TypeScript, Vite, and Tailwind CSS. The dashboard will integrate seamlessly with the MetaCall Protocol to support core local workflows. It will provide developers with a centralized interface to view system health, manage deployments, test functions, and inspect logs, making local development with MetaCall more efficient and user-friendly.
 
