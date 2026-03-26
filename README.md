@@ -352,15 +352,49 @@ Additionally, the project should produce a basic tutorial or article showcasing 
 
 ---
 
-### 12. Redesign MetaCall Dashboard
+## Community Ideas
 
-**Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
+Ideas proposed by the community.
 
-**Expected size of the project**: Medium (175 hours)
+---
+
+### 11. Modernize C# (.NET Core) Loader: Class Support, Pure Functions, and Type Expansion
+
+**Skills**: C#, .NET Core Internals, C++, CMake, FFI
+
+**Expected size of the project**: Small (90 hours)
 
 **Difficulty rating**: Medium
 
 **Description**:
+
+The current MetaCall C# (.NET Core) loader effectively handles static methods by treating them as global functions, but it lacks full object-oriented capabilities. Right now, it treats class static methods as isolated functions without supporting proper class instantiation. Furthermore, modern C# features like top-level statements are not fully supported.
+
+This project aims to drastically modernize the C# loader's architecture. The primary objective is to implement proper support for C# classes (instantiation, instance methods, and state preservation) to bring it to feature parity with other MetaCall language loaders. Additionally, the project will update the loader to support pure functions (as seen in newer C# standards) and expand the list of supported interoperability types.
+
+**Expected Outcomes**:
+1. **Proper Class Support:** Refactor the loader to support full class instantiation and object state, rather than just treating class static methods as functions.
+2. **Modern C# Standards:** Add support for pure functions and top-level statements.
+3. **Type Expansion:** Extend the interop layer to support a wider array of complex data types between C++ and C#.
+4. **Initialization Modernization (Stretch Goal):** Modernize the legacy CoreCLR initialization to use newer .NET Core hosting APIs (`hostfxr`) at the end of the project.
+
+**Use Case Example**:
+
+A developer wants to use a C# data processing library within a Python or Node.js backend. With proper class support, they can instantiate a C# `DataProcessor` object from Node.js, maintain its internal state (like loaded datasets) across multiple function calls, and utilize modern C# pure functions for high-performance calculations. Without this, the developer would be forced to use stateless static methods and pass the state manually every time.
+
+**Possible Mentors:** Thomas Rory Gummerson, Vicente Eduardo Ferrer Garcia, Fernando Vaño Garcia, Gil Arasa Verge.
+
+**Resources:**
+* [MetaCall Core C# Loader Source](https://github.com/metacall/core/tree/master/source/loaders/cs_loader)
+* [Microsoft Docs: Write a custom .NET Core host (hostfxr)](https://learn.microsoft.com/en-us/dotnet/core/tutorials/netcore-hosting)
+* [Microsoft Docs: C# Top-level statements (Pure Functions)](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements)
+* [Microsoft Docs: .NET Native interoperability (FFI)](https://learn.microsoft.com/en-us/dotnet/standard/native-interop/)
+
+### 12. Redesign MetaCall Dashboard for MetaCall FaaS
+
+**Skills**: TypeScript, React, UI/UX Design, Frontend Architecture, Accessibility
+
+**Expected size of the project**: Medium (175 hours)
 
 This project aims to integrate the MetaCall dashboard with MetaCall FaaS. The dashboard will allow developers to deploy functions, the local MetaCall FaaS server status, manage local deployments, test functions, and view logs effectively, improving the overall local developer experience.
 
@@ -369,7 +403,7 @@ The project focuses on redesigning a local MetaCall dashboard from scratch using
 **Expected outcomes**:
 
  - A fully functional, MetaCall dashboard built with React and TypeScript.
- - Implementation of key views including deployment management, function testing, and logs viewer, settings, plan, login/ signup.
+ - Implementation of key views including deployment management, function testing, and logs viewer, settings, plan, login / signup.
  - Seamless integration with the local MetaCall FaaS server and MetaCall Protocol.
  - Clear documentation on how to set up and use the MetaCall dashboard.
 
